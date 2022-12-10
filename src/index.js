@@ -1,18 +1,15 @@
 import readlineSync from 'readline-sync';
-import randomNumber from './randomNumber.js';
 
-function Game() {
+function GamesStructure(gameQuestion, GameLog) {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  console.log(gameQuestion);
   const roundsCount = 3;
   for (let i = 0; i < roundsCount; i += 1) {
-    const question = randomNumber();
+    const [question, rigthAnswer] = GameLog();
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
-    const chet = (randomNum) => randomNum % 2 === 0;
-    const rigthAnswer = chet(question) ? 'yes' : 'no';
     if (answer !== rigthAnswer) {
       console.log(`"${answer}" is wrong answer ;(. Correct answer was "${rigthAnswer}".`);
       console.log(`Let's try again, ${name}!`);
@@ -20,4 +17,4 @@ function Game() {
     } console.log('Correct!');
   } console.log(`Congratulations, ${name}!`);
 }
-export default Game;
+export default GamesStructure;

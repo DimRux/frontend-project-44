@@ -1,3 +1,3 @@
-const randomNumber = () => Math.floor(Math.random() * 101);
+const randomNumber = () => Math.floor(Math.random() * 31);
 
 export default randomNumber;
