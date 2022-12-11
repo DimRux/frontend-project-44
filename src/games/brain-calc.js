@@ -4,9 +4,9 @@ import GamesStructure from '../index.js';
 const gameQuestion = 'What is the result of the expression?';
 
 function GameLog() {
-  const result = [];
   let question;
   let rigthAnswer;
+  const result = [];
   const num1 = randomNumber();
   const num2 = randomNumber();
   const addition = num1 + num2;
