@@ -13,3 +13,6 @@
 
 <h2>brain-progression game demonstration:</h2>
 <a href="https://asciinema.org/a/mzdZuotCY4muWu72a8mXhtfLF" target="_blank"><img src="https://asciinema.org/a/mzdZuotCY4muWu72a8mXhtfLF.svg" /></a>
+
+<h2>brain-prime game demonstration:</h2>
+<a href="https://asciinema.org/a/BWMhz2cuHt8SX0L4p0z3aCApb" target="_blank"><img src="https://asciinema.org/a/BWMhz2cuHt8SX0L4p0z3aCApb.svg" /></a>
