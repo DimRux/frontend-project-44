@@ -6,6 +6,7 @@ const gameQuestion = 'What is the result of the expression?';
 function GameLog() {
   let question;
   let rigthAnswer;
+  const operations = ['+', '-', '*'];
   const result = [];
   const num1 = randomNumber();
   const num2 = randomNumber();
@@ -14,13 +15,13 @@ function GameLog() {
   const multiplication = num1 * num2;
   const i = Math.floor(Math.random() * 3);
   if (i === 1) {
-    question = `${num1}+${num2}`;
+    question = `${num1}${operations[0]}${num2}`;
     rigthAnswer = String(addition);
   } else if (i === 2) {
-    question = `${num1}-${num2}`;
+    question = `${num1}${operations[1]}${num2}`;
     rigthAnswer = String(subtraction);
   } else {
-    question = `${num1}*${num2}`;
+    question = `${num1}${operations[2]}${num2}`;
     rigthAnswer = String(multiplication);
   }
   result.push(question);
