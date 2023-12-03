@@ -1,10 +1,9 @@
 import randomNumber from '../randomNumber.js';
-import GamesStructure from '../index.js';
+import gamesStructure from '../index.js';
 
-const gameQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-function GameLog() {
-  const result = [];
+function round() {
   const question = randomNumber();
   const primeArr = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29];
   function prime(arr) {
@@ -16,13 +15,11 @@ function GameLog() {
     return 'no';
   }
   const rigthAnswer = prime(primeArr);
-  result.push(question);
-  result.push(rigthAnswer);
-  return result;
+  return [question, rigthAnswer];
 }
 
-function GameStart() {
-  GamesStructure(gameQuestion, GameLog);
+function gameStart() {
+  gamesStructure(description, round);
 }
 
-export default GameStart;
+export default gameStart;

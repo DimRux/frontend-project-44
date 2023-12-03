@@ -1,7 +1,7 @@
 import randomNumber from '../randomNumber.js';
-import GamesStructure from '../index.js';
+import gamesStructure from '../index.js';
 
-const gameQuestion = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
 function progressionLength(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -19,29 +19,26 @@ function progressionArray() {
   return arr;
 }
 
-function GameLog() {
-  const result = [];
+const shadowArroy = (arroyConvertible, element, shadowElement) => {
+  const newArr = [];
+  for (let j = 0; j < arroyConvertible.length; j += 1) {
+    newArr.push(arroyConvertible[j]);
+  }
+  newArr[element] = shadowElement;
+  return newArr;
+};
+
+function round() {
   const ligthArray = progressionArray();
   const shadowElementPosition = Math.floor(Math.random() * (ligthArray.length));
-  const shadowElement = '..';
-  const shadowArroy = (arroyConvertible, element) => {
-    const newArr = [];
-    for (let j = 0; j < arroyConvertible.length; j += 1) {
-      newArr.push(arroyConvertible[j]);
-    }
-    newArr[element] = shadowElement;
-    return newArr;
-  };
-  const shadowProgressionArray = shadowArroy(ligthArray, shadowElementPosition);
+  const shadowProgressionArray = shadowArroy(ligthArray, shadowElementPosition, '..');
   const question = shadowProgressionArray.join(' ');
   const rigthAnswer = String(ligthArray[shadowElementPosition]);
-  result.push(question);
-  result.push(rigthAnswer);
-  return result;
+  return [question, rigthAnswer];
 }
 
-function GameStart() {
-  GamesStructure(gameQuestion, GameLog);
+function gameStart() {
+  gamesStructure(description, round);
 }
 
-export default GameStart;
+export default gameStart;

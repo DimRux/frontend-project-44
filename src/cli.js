@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
 
-const User = () => {
+const initInterface = () => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
 };
 
-export default User;
+export default initInterface;
