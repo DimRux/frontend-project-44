@@ -4,8 +4,8 @@ import gamesStructure from '../index.js';
 const description = 'Find the greatest common divisor of given numbers.';
 
 const gcd = (number1, number2) => {
-  if (number1 === number2) {
-    return number1;
+  if (number1 === 0) {
+    return number2;
   }
   let minValue;
   let maxValue;
@@ -16,7 +16,7 @@ const gcd = (number1, number2) => {
     minValue = number1;
     maxValue = number2;
   }
-  return gcd(maxValue - minValue, minValue);
+  return gcd(maxValue % minValue, minValue);
 };
 
 function round() {
