@@ -3,18 +3,19 @@ import gamesStructure from '../index.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
+const isPrime = (num) => {
+  let devidersCount = 0;
+  for (let i = 1; i <= num; i += 1) {
+    if (num % i === 0) {
+      devidersCount += 1;
+    }
+  }
+  return devidersCount === 2;
+};
+
 function round() {
   const question = randomNumber();
-  const primeArr = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29];
-  function prime(arr) {
-    for (let i = 0; i < arr.length; i += 1) {
-      if (question === arr[i]) {
-        return 'yes';
-      }
-    }
-    return 'no';
-  }
-  const rigthAnswer = prime(primeArr);
+  const rigthAnswer = isPrime(question) ? 'yes' : 'no';
   return [question, rigthAnswer];
 }
 
